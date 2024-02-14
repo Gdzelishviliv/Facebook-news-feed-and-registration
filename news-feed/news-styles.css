@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    background: #18191a;
+}
+.news-card{
+    height: 133px;
+    width: 500px;
+    background: #1C1C1C;
+    margin: auto;
+    margin-top: 10%;
+    padding: 10px 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.post-header{
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+}
+.news-card >div input{
+    width: 100%;
+    color: #fff;
+    border-radius: 25px;
+    height: 35px;
+    padding-inline: 10px;
+    background-color: gray;
+    border: 0px;
+    cursor: pointer;
+    
+}
+input::placeholder{
+    color: #fff;
+}
+.post-content{
+    display: flex;
+    gap: 60px;
+}
+.post-content>div{
+    display: flex;
+    gap: 5px;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+}
+.popup{
+    padding:20px;
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 33%;
+    height: 428px;
+    width: 500px;
+    background: #1C1C1C;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.popup-head{
+    display: flex;
+    justify-content: flex-end;
+    gap: 140px;
+    color: #fff;
+    padding-inline: 10px;
+    align-items: center;
+    height: 25px;
+}
+.popup-head button{
+    height: 25px;
+}
+span,
+h5{
+    color: #fff;
+}
+.main-popup input{
+    background: transparent;
+    border: 0px;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+}
+.main-popup input:focus{
+    outline: none;
+}
+.main-popup input::placeholder{
+    font-size: 20px;
+}
+.color-changin-section,
+.features{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.privacy-info{
+    display: flex;
+}
+.ragaca{
+    -webkit-filter: invert(89%) sepia(6%) hue-rotate(185deg);;
+}

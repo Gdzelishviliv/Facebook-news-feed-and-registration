@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./news-styles.css" />
+    <script defer src="./feed.js"></script>
+    <title>Facebook-News Feed</title>
+  </head>
+  <body>
+    <section class="feed-container">
+      <div class="news-card">
+        <div class="post-header">
+          <img
+            src="./profile-pic/profile-picture.jpg"
+            alt="profile img"
+            style="height: 40px; width: 40px; border-radius: 100%"
+          />
+          <input id="input-for-popup"
+            type="text"
+            placeholder="საკუთარ აზრებს ხომ არ გაგვიზიარებდით?"
+          />
+        </div>
+        <div class="post-content">
+          <div>
+            <img src="./profile-pic/camera.png" alt="icn"style="width:25px; height:25px;"/>
+            <span>პირდაპირი ვიდეომაუწყებლობა</span>
+          </div>
+          <div>
+            <img src="./profile-pic/foto.png" alt="icn" style="width: 25px; height: 25px;">
+            <span>ფოტო/ვიდეო</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <popup class="popup">
+        <div class="popup-head">
+            <h3>პოსტის შექმნა</h3>
+            <button id="hide-popup">X</button>
+        </div>
+        <div class="main-popup">
+            <div class="privacy-info">
+                <img src="./profile-pic/profile-picture.jpg" alt="profile pic"style= "border-radius: 100%">
+                <div>
+                    <span id="popup-name"></span>
+                    <div>
+                        <img class="ragaca" src="./profile-pic/klite.png" alt="">
+                        <span>მხოლოდ მე</span>
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <input type="text" name="" id="input-with-placeholder" placeholder="საკუთარ აზრებს ხომ არ გაგვიზიარებდით?">
+
+            <div class="color-changin-section">
+                <img src="./profile-pic/praidicn.png" alt="" style="height: 38px; width: 38px; cursor: pointer;">
+                <img src="./profile-pic/smile.png" alt="" style=" height: 24px; width: 24px; cursor: pointer;">
+            </div>
+            <div class="features">
+                <h5>თქვენს პოსტზე დამატება</h5>
+                <div>
+                    <img src="./profile-pic/foto.png" alt="icn" style="width: 25px; height: 25px;cursor: pointer">
+                    <img src="./profile-pic/tag.png" alt="" style="width: 25px; height: 25px; cursor: pointer">
+                    <img src="./profile-pic/smile.png" alt="" style=" height: 24px; width: 24px; cursor: pointer;">
+                    <img src="./profile-pic/location.png" alt="" style="width: 25px; height: 25px; cursor: pointer">
+                    <img src="./profile-pic/gif.png" alt="" style="width: 25px; height: 25px; cursor: pointer">
+                </div>
+            </div>
+        </div>
+        <button>პოსტი</button>
+    </popup>
+  </body>
+</html>
