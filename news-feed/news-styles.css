@@ -100,3 +100,23 @@ h5{
 .ragaca{
     -webkit-filter: invert(89%) sepia(6%) hue-rotate(185deg);;
 }
+.post{
+    margin:auto;
+    width: 500px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    background: #1C1C1C;
+    margin-top: 20px;
+}
+.post-header{
+    justify-content: flex-end;
+}
+.post-values{
+    display: grid;
+    justify-items: center;
+}
+.post-values img{
+    width: 330px;
+    height: 330px;
+}

@@ -29,3 +29,77 @@ input.addEventListener("focusin", () => {
 removePopup.onclick = () => {
   feedCard.style.display = "none";
 };
+
+const postButton = document.getElementById("post-button");
+const photoUrlInput = document.getElementById("photo-url");
+const feedContainer = document.querySelector(".feed-container");
+
+const createPost = () => {
+  const postContent = inputWithPlaceholder.value.trim();
+  const photoInput = document.getElementById("photo-url");
+  const photoFiles = photoInput.files;
+
+  if (postContent || photoFiles.length > 0) {
+    const newPost = document.createElement("div");
+    newPost.classList.add("post");
+    newPost.innerHTML = `
+      <div class="post-header">
+        <button class="post-remove-btn">x</button>
+      </div>
+      <div class="post-values">
+        <p>${postContent}</p>
+        ${
+          photoFiles.length > 0
+            ? `<img src="${URL.createObjectURL(
+                photoFiles[0]
+              )}" alt="Post Image">`
+            : ""
+        }
+      </div>
+    `;
+
+    feedContainer.appendChild(newPost);
+
+    inputWithPlaceholder.value = "";
+    photoInput.value = "";
+
+    feedCard.style.display = "none";
+
+    const deleteButton = newPost.querySelector(".post-remove-btn");
+    deleteButton.addEventListener("click", () => {
+      deletePost(newPost);
+    });
+
+    savePostToLocalStorage(newPost);
+  } else {
+    alert("Please enter some content or select an image/video before posting.");
+  }
+};
+
+const deletePost = (postElement) => {
+  postElement.remove();
+  updateLocalStorage();
+};
+
+const savePostToLocalStorage = (postElement) => {
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  const postContent = postElement.querySelector(".post-values p").innerText;
+  const photoUrl = postElement.querySelector(".post-values img")?.src || "";
+
+  const newPostData = { postContent, photoUrl };
+  posts.push(newPostData);
+  localStorage.setItem("posts", JSON.stringify(posts));
+};
+
+const updateLocalStorage = () => {
+  const posts = Array.from(document.querySelectorAll(".post")).map(
+    (postElement) => {
+      const postContent = postElement.querySelector(".post-values p").innerText;
+      const photoUrl = postElement.querySelector(".post-values img")?.src || "";
+      return { postContent, photoUrl };
+    }
+  );
+  localStorage.setItem("posts", JSON.stringify(posts));
+};
+
+postButton.addEventListener("click", createPost);
